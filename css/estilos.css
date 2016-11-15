@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Crimson+Text:400,700|Open+Sans:400,700");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700|Raleway:400,700");
 @import url(owl.carousel.css);
 @import url(jquery.mCustomScrollbar.min.css);
 body::-webkit-scrollbar {
@@ -19,7 +19,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 body {
-  font-family: 'Crimson Text', serif;
+  font-family: 'Raleway', serif;
   background: #1A1A22;
 }
 
@@ -394,17 +394,23 @@ section#header article:first-child h2 {
   align-items: center;
 }
 
-#premium article .premium-tab .premium-icon .icon {
+#premium article .premium-tab .premium-icon [class^="icon-"] {
   width: 70px;
   height: 70px;
   margin: 1em;
   border-radius: 100%;
   border: 3px solid white;
   transition: .2s;
+  position: relative;
 }
 
-#premium article .premium-tab .premium-icon .icon:hover {
-  border-color: #ED7B18;
+#premium article .premium-tab .premium-icon [class^="icon-"]::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 2.2em;
+  box-sizing: border-box;
+  padding: .5em;
 }
 
 #premium article .premium-tab .premium-icon p {
@@ -414,6 +420,11 @@ section#header article:first-child h2 {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 11px;
+  padding-bottom: 1em;
+}
+
+#premium article .premium-tab .premium-icon:hover > [class^="icon-"] {
+  border-color: #ED7B18;
 }
 
 #space {
@@ -464,6 +475,11 @@ section#header article:first-child h2 {
   background-color: #1A1A22;
   border-radius: 3px;
   color: #ededed;
+  transition: .1s ease-out;
+}
+
+#upcoming article .upcoming-tab .upcoming-section:hover {
+  box-shadow: rgba(4, 5, 15, 0.2) 0px 2px 2px, rgba(4, 5, 15, 0.2) 0px 4px 4px, rgba(4, 5, 15, 0.2) 0px 8px 8px, rgba(4, 5, 15, 0.2) 0px 16px 16px, rgba(4, 5, 15, 0.2) 0px 32px 32px, rgba(4, 5, 15, 0.2) 0px 64px 64px;
 }
 
 #upcoming article .upcoming-tab .upcoming-section figure {
@@ -493,13 +509,11 @@ section#header article:first-child h2 {
 #upcoming article .upcoming-tab .upcoming-section .upcoming-text p {
   font-size: .7em;
   text-align: left;
-  font-family: 'Open Sans', serif;
   max-height: 250px;
   overflow: auto;
 }
 
 #upcoming article .upcoming-tab .upcoming-section .upcoming-text p a {
-  font-family: 'Open Sans', serif;
   text-transform: uppercase;
   color: #ED7B18;
 }
@@ -514,7 +528,7 @@ section#header article:first-child h2 {
 
 #preferencias {
   height: 400px;
-  background-image: url(../img/fondo-6.png);
+  background-image: url("../img/fondo-6.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center bottom;
@@ -530,15 +544,6 @@ section#header article:first-child h2 {
   color: #ededed;
 }
 
-#preferencias article .prefe-logo {
-  max-width: 800px;
-  width: 15%;
-}
-
-#preferencias article .prefe-logo img {
-  width: 100%;
-}
-
 #preferencias article p {
   margin: 0;
 }
@@ -549,17 +554,188 @@ section#header article:first-child h2 {
   letter-spacing: 1px;
   text-transform: uppercase;
   flex-basis: 1;
-  width: 40%;
   color: #ED7B18;
 }
 
 #preferencias article .mid {
   margin: 0 3em;
-  width: 40%;
   font-size: 12px;
+  line-height: 18px;
 }
 
 #vip {
   height: 400px;
-  background: black;
+  background-color: black;
+  background-image: url("../img/imagen-7.jpg");
+  background-size: 75%;
+  background-repeat: no-repeat;
+  background-position: right 20%;
+  position: relative;
+}
+
+#vip::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: linear-gradient(to right, black 0%, black 25%, rgba(125, 185, 232, 0) 100%);
+  top: 0;
+  left: 0;
+}
+
+#vip article {
+  color: #ededed;
+  max-width: 300px;
+  padding: 4em;
+  z-index: 3;
+  position: relative;
+}
+
+#vip article h4 {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 2em;
+  font-weight: 200;
+  color: #847758;
+}
+
+#vip article p {
+  font-size: .7em;
+  text-align: left;
+  overflow: auto;
+  color: #e7e3db;
+}
+
+#vip article .boton {
+  padding: 1.1em 4em;
+  background-color: #ED7B18;
+  letter-spacing: 1px;
+  font-size: .8em;
+  color: #ededed;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+#vip article .boton:active {
+  box-shadow: 2px 2px 5px #944b0b inset;
+}
+
+footer .top-footer {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../img/fondo-7.jpg");
+  background-size: cover;
+  height: 350px;
+}
+
+footer .top-footer .footer-logo figure {
+  margin: 0;
+  max-width: 350px;
+  padding: 4em;
+}
+
+footer .top-footer .footer-logo figure img {
+  width: 100%;
+}
+
+footer .top-footer .footer-descrip {
+  width: 70%;
+}
+
+footer .top-footer .footer-descrip .patrocinadores {
+  border-bottom: 1px solid #ededed;
+}
+
+footer .top-footer .footer-descrip .patrocinadores figure {
+  margin: 0;
+}
+
+footer .top-footer .footer-descrip .patrocinadores figure img {
+  max-height: 50px;
+  margin-right: 1em;
+}
+
+footer .top-footer .footer-descrip p {
+  color: #ededed;
+  font-size: 0.8em;
+  margin-right: 1em;
+}
+
+footer .top-footer .footer-descrip ul {
+  display: flex;
+}
+
+footer .top-footer .footer-descrip ul li {
+  margin: 1em 1.5em 0 0;
+}
+
+footer .top-footer .footer-descrip ul li a {
+  color: #ED7B18;
+  text-transform: uppercase;
+  font-size: .8em;
+}
+
+footer .top-footer .footer-descrip ul li a:hover {
+  text-decoration: underline;
+}
+
+footer .bot-footer {
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4em;
+}
+
+footer .bot-footer p {
+  margin: 0;
+  padding: 0;
+  color: #ededed;
+  text-transform: uppercase;
+  font-size: .8em;
+}
+
+footer .bot-footer .redes {
+  height: 50px;
+}
+
+footer .bot-footer .redes ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+footer .bot-footer .redes ul li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+}
+
+footer .bot-footer .redes ul li [class^="icon-"] {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  color: #555570;
+}
+
+footer .bot-footer .redes ul li [class^="icon-"]::before {
+  position: absolute;
+  font-size: 1.3em;
+  cursor: pointer;
+  transition: .1s;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: .7em;
+}
+
+footer .bot-footer .redes ul li [class^="icon-"]:hover::before {
+  background: #ED7B18;
+  color: #ededed;
 }
